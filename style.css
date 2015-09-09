@@ -1,12 +1,12 @@
 body {
-  background: #abc;
+  background: #00ff00;
   margin: 0;
   padding: 0;
 }
 #screen {
   margin: 0 auto;
-  max-height:500px;
-  max-width:500px;
+  max-height: 100%;
+  max-width: 100%;
   position: relative;
   overflow: hidden;
 }
