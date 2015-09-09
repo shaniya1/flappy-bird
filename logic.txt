@@ -1,0 +1,130 @@
+Palette/Typography
+
+  sky = #ddeeff
+  background = #00ff00
+
+  font: '8px "Press Start 2P"',
+  fill: '#fff',
+  align: 'center'
+
+  font: '8px "Press Start 2P"',
+  fill: '#fff',
+  stroke: '#430',
+  strokeThickness: 4,
+  align: 'center'
+
+  font: '16px "Press Start 2P"',
+  fill: '#fff',
+  stroke: '#430',
+  strokeThickness: 4,
+  align: 'center'
+
+  scoreText.setText("DON'T\nTOUCH\nMY\nBIRDIE");
+  instText.setText("TOUCH TO FLAP\nBIRDIE WINGS");
+  instText.setText("TOUCH BIRDIE\nTO TRY AGAIN");
+  gameOverText.setText("GAMEOVER\n\nHIGH SCORE\n" + hiscore);
+
+Phaser variables/functions
+
+  var game = new Phaser.Game()
+  cloudsTimer = new Phaser.Timer(game);
+  fingersTimer = new Phaser.Timer(game);
+
+  var assets = {
+      spritesheet: {
+          birdie: ['assets/birdie.png', 24, 24],
+          clouds: ['assets/clouds.png', 128, 64]
+      },
+      image: {
+          finger: ['assets/finger.png'],
+          fence: ['assets/fence.png']
+      },
+      audio: {
+          flap: ['assets/flap.wav'],
+          score: ['assets/score.wav'],
+          hurt: ['assets/hurt.wav']
+      }
+  };
+
+  Object.keys(assets).forEach(function(type) {
+      Object.keys(assets[type]).forEach(function(id) {
+          game.load[type].apply(game.load, [id].concat(assets[type][id]));
+      });
+  });
+
+global variables
+
+  var DEBUG = false;
+  var SPEED = 690;
+  var GRAVITY = 40;
+  var FLAP = 620;
+  var SPAWN_RATE = 1 / 1.2;
+  var OPENING = 134;
+
+main "global" variables
+
+  var state = {
+      preload: preload,
+      create: create,
+      update: update,
+      render: render
+  };
+
+  var parent = document.querySelector('#screen');
+
+  var game = new Phaser.Game(
+      0,
+      0,
+      Phaser.CANVAS,
+      parent,
+      state,
+      false,
+      false
+  );
+
+  var gameStarted,
+      gameOver,
+      score,
+      bg,
+      credits,
+      clouds,
+      fingers,
+      invs,
+      birdie,
+      fence,
+      scoreText,
+      instText,
+      gameOverText,
+      flapSnd,
+      scoreSnd,
+      hurtSnd,
+      fingersTimer,
+      cloudsTimer;
+
+functions
+  main()
+  preload()
+    links Phaser to assets
+  create()
+    creates the game board
+    reset()
+  reset()
+    gameStarted = false;
+    gameOver = false;
+    score = 0;
+  start()
+    begin game
+  flap()
+    start()
+  spawnCloud()
+    creates clouds
+  spawnFinger(fingerY, flipped)
+   creates finger
+  o()
+  spawnFingers()
+    spawnFinger()
+  addScore(_, inv)
+  setGameOver()
+  update()
+  render()
+    only runs in debug mode
