@@ -91,7 +91,7 @@ function main() {
         game.world.height = screenHeight;
         // Draw bg
         bg = game.add.graphics(0, 0);
-        bg.beginFill(0xFF00FF, 1);
+        bg.beginFill(0xFF98FF, 1);
         bg.drawRect(0, 0, game.world.width, game.world.height);
         bg.endFill();
         // Credits 'yo
