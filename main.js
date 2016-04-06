@@ -3,7 +3,7 @@ var SPEED = 690;
 var GRAVITY = 40;
 var FLAP = 640;
 var SPAWN_RATE = 1 / 1.2;
-var OPENING = 12;
+var OPENING = 134;
 
 WebFontConfig = {
     google: { families: [ 'Press+Start+2P::latin' ] },
@@ -91,7 +91,7 @@ function main() {
         game.world.height = screenHeight;
         // Draw bg
         bg = game.add.graphics(0, 0);
-        bg.beginFill(0xDDEEFF, 1);
+        bg.beginFill(0xFFFF, 1);
         bg.drawRect(0, 0, game.world.width, game.world.height);
         bg.endFill();
         // Credits 'yo
