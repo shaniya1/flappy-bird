@@ -2,8 +2,8 @@ var DEBUG = false;
 var SPEED = 690;
 var GRAVITY = 40;
 var FLAP = 640;
-var SPAWN_RATE = 1 / 6.5;
-var OPENING = 134;
+var SPAWN_RATE = 1 / 1.2;
+var OPENING = 12;
 
 WebFontConfig = {
     google: { families: [ 'Press+Start+2P::latin' ] },
