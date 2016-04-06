@@ -171,6 +171,11 @@ function main() {
         hurtSnd = game.add.audio('hurt');
         // Add controls
         game.input.onDown.add(flap);
+        
+        // add keyboard controls - associate spacebar with the flap function
+        flapKey = game.input.keyboard.addKey (Phaser.Keyboard.SPACEBAR);
+        flapKey.onDown.add (flap);
+        
         // Start clouds timer
         cloudsTimer = new Phaser.Timer(game);
         cloudsTimer.onEvent.add(spawnCloud);
